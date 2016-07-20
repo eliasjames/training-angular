@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Intro to Angular</title>
+    <script src="../../../lib/1.5/node_modules/angular/angular.js"></script>
+  </head>
+  <body ng-app>
+    <h1>{{ "Angular Template" | lowercase | uppercase }}</h1>
+      <ol ng-init="songsList = [
+          { name: 'Body and Soul', genre: 'Jazz' },
+          { name: 'Twist and Shout', genre: 'Rock' },
+          { name: 'On The Road Again', genre: 'Country' }
+        ]">
+        <li ng-repeat="eachSong in songsList" ng-bind="eachSong.name"></li>
+      </ol>
+    </div>
+  </body>
+</html>

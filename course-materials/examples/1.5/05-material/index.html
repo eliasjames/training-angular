@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Intro to Angular</title>
+    <link rel="stylesheet" href="/node_modules/angular-material/angular-material.css">
+    <script src="../../../lib/1.5/node_modules/angular/angular.js"></script>
+    <script src="../../node_modules/angular-animate/angular-animate.js"></script>
+    <script src="../../node_modules/angular-aria/angular-aria.js"></script>
+    <script src="../../node_modules/angular-material/angular-material.js"></script>
+    <script>
+      angular.module('sbuxJukebox', ['ngMaterial']);
+      angular.module('sbuxJukebox').config( function($mdThemingProvider) {
+          $mdThemingProvider.theme('default')
+          .primaryPalette('indigo')
+          .accentPalette('grey')
+          .warnPalette('red');
+      });
+    </script>
+    <script src="./JukeboxUiController.js"></script>
+    <script src="./JukeboxUiDirective.js"></script>
+    <script src="./JukeboxUiComponent.js"></script>
+    <style>
+      .error { color: red }
+    </style>
+  </head>
+  <body ng-app="sbuxJukebox" layout="column">
+    <md-toolbar layout="row">
+      <h1>Jukebox UI</h1>
+    </md-toolbar>
+    <div ng-controller="JukeboxUiController">
+        <md-tabs md-stretch-tabs >
+          <md-tab>
+            <md-tab-label>
+              <p>Playlists</p>
+            </md-tab-label>
+            <md-tab-body>
+              <p>Playlists</p>
+            </md-tab-body>
+          </md-tab>
+          <md-tab>
+            <md-tab-label>
+              <p>Search</p>
+            </md-tab-label>
+            <md-tab-body>
+              <p>Search</p>
+            </md-tab-body>
+          </md-tab>
+          <md-tab>
+            <md-tab-label>
+              <p>Add</p> a song
+            </md-tab-label>
+            <md-tab-body>
+              Add a song
+            </md-tab-body>
+          </md-tab>
+        </md-tabs>
+        </md-tabs>
+    </div>
+  </body>
+</html>

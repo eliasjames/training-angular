@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Intro to Angular</title>
+    <script src="../../../lib/1.5/node_modules/angular/angular.js"></script>
+    <style>
+      dl { width: 50%; }
+      dt { float: left; }
+      dd { float: left; }
+      br { clear: right; }
+      p { border: 1px solid black; }
+      .stripe { background-color: lightblue; }
+    </style>
+  </head>
+  <body ng-app>
+    <h1>{{ "Angular Template" | lowercase | uppercase }}</h1>
+      <dl ng-init="songsList = [
+          { name: 'Body and Soul', genre: 'Jazz' },
+          { name: 'Twist and Shout', genre: 'Rock' },
+          { name: 'On The Road Again', genre: 'Country' }
+        ]">
+        <p>Some complications with ng-repeat</p>
+        <p>ng-repeat-end tag can't be applied to a closing tag</p>
+        <p>special props like $even can't be used before ng-repeat-start</p>
+        <div ng-repeat-start="eachSong in songsList" ng-class="$even ? 'stripe' : undefined">
+          <dt>name</dt>
+          <dd ng-bind="eachSong.name"></dd>
+          <br/>
+          <dt>genre</dt>
+          <dd ng-bind="eachSong.genre"></dd>
+        </div>
+        <br ng-repeat-end />
+        
+        <p>Here's another implementation</p>
+        <p>It omits the div wrapper</p>
+        <p>but now ng-class has to be applied everywhere</p>
+        <dt ng-repeat-start="eachSong in songsList" ng-class="$even ? 'stripe' : undefined">name</dt>
+        <dd ng-bind="eachSong.name" ng-class="$even ? 'stripe' : undefined"></dd>
+        <br/>
+        <dt ng-class="$even ? 'stripe' : undefined">genre</dt>
+        <dd ng-bind="eachSong.genre" ng-class="$even ? 'stripe' : undefined"></dd>
+        <br ng-repeat-end />
+      </ol>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Intro to Angular</title>
+     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.css">
+    <!--<script src="../../../lib/1.4/node_modules/angular/angular.js"></script>-->
+	  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+	  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+	  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+	  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+	  <!-- Angular Material Library -->
+	  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+    <script src="playlist.controller.js"></script>
+    <script src="songsurl.value.js"></script>
+    <script src="songsurl.service.js"></script>
+    <script src="songs.component.js"></script>
+  </head>
+  <body ng-app='sbuxApp' layout="column">
+  	<md-toolbar>
+  	  <h1>Songs UI</h1>
+  	</md-toolbar>
+ 
+    <div ng-controller="sbuxWidget as sW">
+	   <p>
+		    <md-autocomplete 
+		      md-selected-item="selectedItem" 
+		      md-search-text="searchText" 
+		      md-items="item in getMatches(searchText)" 
+		      md-item-text="item.display"
+		    >
+		      <span md-highlight-text="searchText">{{item.display}}</span>
+		    </md-autocomplete>
+	    </p>
+    	<h2>{{ testsSU }}</h2>
+    	<div>
+			<input type="hidden" ng-bind="editingIndex" />
+			<input type="text" ng-model="editSong.name"></input>
+			<span ng-bind="editSong.name.length"></span>
+			<button ng-click="saveSong(editSong, editingIndex)">Save</button>
+		</div>
+		<sbux-songs></sbux-songs>
+	</div>
+    
+  </body>
+</html>

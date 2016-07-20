@@ -1,0 +1,53 @@
+<html lang="en" >
+   <head>
+    <link rel="stylesheet" href="/node_modules/angular-material/angular-material.css">
+    <script src="../../angular1.5.js"></script>
+    <script src="../../node_modules/angular-animate/angular-animate.js"></script>
+    <script src="../../node_modules/angular-aria/angular-aria.js"></script>
+    <script src="../../node_modules/angular-material/angular-material.js"></script>
+      <script language="javascript">
+          angular
+            .module('firstApplication', ['ngMaterial'])
+            .controller('tabController', tabController);
+
+          function tabController ($scope) {            
+             $scope.data = {
+                selectedIndex: 0,
+                secondLocked:  true,
+                secondLabel:   "2",
+                bottom:        false
+             };
+             $scope.next = function() {
+                $scope.data.selectedIndex = Math.min($scope.data.selectedIndex + 1, 2) ;
+             };
+             $scope.previous = function() {
+                $scope.data.selectedIndex = Math.max($scope.data.selectedIndex - 1, 0);
+             };
+          }   
+      </script>      
+   </head>
+   <body ng-app="firstApplication"> 
+      <div id="tabContainer" ng-controller="tabController as ctrl" ng-cloak>
+         <md-content class="md-padding">
+            <md-tabs class="md-accent" md-selected="data.selectedIndex" md-align-tabs="{{data.bottom ? 'bottom' : 'top'}}">
+               <md-tab id="tab1">
+                  <md-tab-label>1</md-tab-label>
+                  <md-tab-body>Item #1 <br/>selectedIndex = 0;</md-tab-body>
+               </md-tab>
+               <md-tab id="tab2" ng-disabled="data.secondLocked">
+                  <md-tab-label>{{data.secondLabel}}</md-tab-label>
+                  <md-tab-body>Item #2 <br/>selectedIndex = 1;</md-tab-body>
+               </md-tab>
+               <md-tab id="tab3">
+                  <md-tab-label>3</md-tab-label>
+                  <md-tab-body>Item #3<br/>selected Index = 2;</md-tab-body>
+               </md-tab>
+            </md-tabs>
+         </md-content>
+         <div class="md-padding" layout="row" layout-sm="column" layout-align="left center" style="padding-top: 0;">
+            <md-checkbox ng-model="data.secondLocked" aria-label="Disable tab 2?" style="margin: 5px;">Disable tab 2?</md-checkbox>
+            <md-checkbox ng-model="data.bottom" aria-label="Align tabs to bottom?" style="margin: 5px;">Align tabs to bottom?</md-checkbox>
+         </div>
+      </div>
+   </body>
+</html>

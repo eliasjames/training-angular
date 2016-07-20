@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Intro to Angular</title>
+    <script src="../../../lib/1.5/node_modules/angular/angular.js"></script>
+    <script>
+      angular.module('ejApp', []);
+      angular.module('ejApp')
+        .controller('SongsController', function SongsController($scope) {
+          $scope.items = [
+            {id: 1, name: 'Body and Soul'},
+            {id: 2, name: 'On The Road Again'},
+            {id: 3, name: 'Twist and Shout'},
+            {id: 4, name: 'Midnight Special'}
+          ];
+        });
+    </script>
+  </head>
+  <body ng-app="ejApp">
+    <div ng-controller="SongsController">
+      <h4 ng-pluralize count="items.length"
+          when="{'one': '1 item', 'other': '{} items'}">
+      </h4>
+      <table class="table table-condensed">
+        <tr ng-repeat="item in items">
+          <td>{{  item.name }}</td>
+          <td>
+            <button class="btn btn-xs btn-default" ng-click="destroy(item)">
+              destroy
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

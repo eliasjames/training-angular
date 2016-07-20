@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Intro to Angular</title>
+    <script src="../../../lib/1.5/node_modules/angular/angular.js"></script>
+    <script>
+      angular.module('ejApp', [])
+        .filter('stringLength', function () {
+          return function (text) {
+            return text.length;
+          }
+        });
+    </script>
+  </head>
+  <body ng-app="ejApp">
+    <table>
+      <tr>
+        <th>Value</th>
+        <th>Filter</th>
+        <th>Result</th>
+      </tr>
+      <tr>
+        <td>Angular Template</td>
+        <td>uppercase</td>
+        <td>{{ "Angular Template" | uppercase }}</td>
+      </tr>
+    </table>
+  </body>
+</html>
