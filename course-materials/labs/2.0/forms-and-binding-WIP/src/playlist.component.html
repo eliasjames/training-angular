@@ -1,0 +1,6 @@
+<div>
+  <sbux-songs-list [songsList]="playList"></sbux-songs-list>
+  <div *ngIf="editmode && editingSong">
+    <sbux-add-edit-song></sbux-add-edit-song>
+  </div>
+</div>

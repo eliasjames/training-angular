@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Intro to Angular</title>
+    <script src="../../angular.js"></script>
+    <script>
+      angular.module('sbuxJukebox', []);
+    </script>
+    <script src="./JukeboxUiController.js"></script>
+    <script src="./JukeboxUiDirective.js"></script>
+    <style>
+      .error { color: red }
+    </style>
+  </head>
+  <body ng-app="sbuxJukebox">
+    <h1>Jukebox UI</h1>
+    <div ng-controller="JukeboxUiController">
+      <div jukebox-ui="add-edit"></div>
+    </div>
+  </body>
+</html>

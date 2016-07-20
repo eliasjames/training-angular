@@ -1,0 +1,7 @@
+<div>
+  <div>Current: {{ myIS.incrementor$ | async }}</div>
+  <div>Cumulative: {{ myIS.runningTotal | async }} </div>
+  <button (click)="decrementor();">Down</button>
+  <button (click)="incrementor();">Up</button>
+</div>
+  

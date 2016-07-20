@@ -1,0 +1,1 @@
+{"version":3,"file":"songlist.component.js","sourceRoot":"","sources":["songlist.component.ts"],"names":[],"mappings":";;;;;;;;;;AAAA,qBAA0B,eAAe,CAAC,CAAA;AAM1C;IAAA;QACE,cAAS,GAAG;YACV,mBAAmB;YACnB,iBAAiB;YACjB,4BAA4B;SAC7B,CAAA;IACH,CAAC;IAVD;QAAC,gBAAS,CAAC;YACT,QAAQ,EAAE,gBAAgB;YAC1B,QAAQ,EAAE,yEAAyE;SACpF,CAAC;;yBAAA;IAOF,wBAAC;AAAD,CAAC,AAND,IAMC;AANY,yBAAiB,oBAM7B,CAAA"}

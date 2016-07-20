@@ -1,0 +1,18 @@
+<thead>
+  <tr>
+    <th ng-if="editMode"></th>
+    <th ng-if="editMode"></th>
+    <th>Title</th>
+    <th>Genre</th>
+    <th>Plays</th>
+    <th></th>
+  </tr>
+</thead>
+<tr ng-repeat="eachSong in savedSongs">
+  <td ng-if="editMode"><button ng-click="editSong($index)">edit</button></td>
+  <td ng-if="editMode"><button ng-click="deleteSong($index)">delete</button></td>
+  <td ng-bind="eachSong.title"></td>
+  <td ng-bind="eachSong.genre"></td>
+  <td ng-bind="eachSong.plays"></td>
+  <td><button ng-click="playSong($index)">play</button></td>
+</tr>

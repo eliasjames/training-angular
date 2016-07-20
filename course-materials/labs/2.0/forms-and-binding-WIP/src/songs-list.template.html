@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th *ngIf="editmode"></th>
+      <th *ngIf="editmode"></th>
+      <th>Title</th>
+      <th>Genre</th>
+      <th>Plays</th>
+      <th></th>
+    </tr>
+  </thead>
+ <tr *ngFor="#eachSong of songsList; #index = index">
+    <td *ngIf="editmode"><button (click)="editSong(index)">edit</button></td>
+    <td *ngIf="editmode"><button (click)="deleteSong(index)">delete</button></td>
+    <td> {{ eachSong.title }} </td>
+    <td> {{ eachSong.genre }} </td>
+    <td> {{ eachSong.plays }} </td>
+    <td><button ng-click="playSong($index)">play</button></td>
+  </tr>
+</table>

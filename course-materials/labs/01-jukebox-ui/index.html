@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Intro to Angular</title>
+    <script src="../../angular.js"></script>
+    <script>
+      angular.module('our-app', []);
+      angular.module('our-app')
+        .controller('JukeboxUiController', function($scope) {
+          var blankSong = { title: '', genre: '' };
+          $scope.savedSongs = [
+            { title: 'Body and Soul', genre: 'Jazz' },
+            { title: 'Twist and Shout', genre: 'Rock' },
+            { title: 'On The Road Again', genre: 'Country' }
+          ];
+          $scope.genreList = ['Blues', 'Country', 'Jazz', 'Rock'];
+
+          function resetSongForm () {
+            $scope.editingSong = angular.copy(blankSong);
+          }
+          $scope.saveSong = function ( song, arrayIndex ) {
+            if ( arrayIndex >= 0 ) {
+              $scope.savedSongs[arrayIndex] = angular.copy(song);
+            } else {
+              $scope.savedSongs.push(song);
+            }
+            resetSongForm();
+          }
+          $scope.editSong = function ( editIndex ) {
+            $scope.editingSong = angular.copy($scope.savedSongs[editIndex]);
+            $scope.editingIndex = editIndex;
+          }
+          $scope.deleteSong = function ( index ) {
+            $scope.savedSongs.splice(index, 1);
+          }
+          $scope.playSong = function ( index ) {
+            var thisSong = $scope.savedSongs[ index ];
+            if ( !thisSong.plays ) thisSong.plays = 0;
+            thisSong.plays++;
+          }
+        });
+    </script>
+    <style>
+      .error { color: red }
+    </style>
+  </head>
+  <body ng-app="our-app">
+    <h1>Jukebox UI</h1>
+    <div ng-controller="JukeboxUiController">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Plays</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tr ng-repeat="eachSong in savedSongs">
+          <td><button ng-click="editSong($index)">edit</button></td>
+          <td><button ng-click="deleteSong($index)">delete</button></td>
+          <td ng-bind="eachSong.title"></td>
+          <td ng-bind="eachSong.genre"></td>
+          <td ng-bind="eachSong.plays"></td>
+          <td><button ng-click="playSong($index)">play</button></td>
+        </tr>
+      </table>
+      <hr/>
+      <h2>Add/edit form</h2>
+      <form novalidate name="songForm" >
+        Name: <input type="text" name="title" ng-model="editingSong.title"
+          ng-minlength="2">&nbsp;
+        <span ng-bind="editingSong.title.length"></span>
+        <span class="error" ng-show="!songForm.title.$valid"> Name must be 2 characters or more</span>
+        <br/>
+        Genre: <select ng-model="editingSong.genre">
+          <option ng-repeat="eachGenre in genreList">{{ eachGenre }}</option>
+        </select>
+        <br/>
+        <input type="hidden" ng-bind="editingIndex" />
+        <input type="submit" ng-click="saveSong(editingSong, editingIndex)"
+          ng-disabled="songForm.$invalid" value="Save" />
+        <br/>
+      </form>
+    </div>
+  </body>
+</html>
