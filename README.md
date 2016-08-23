@@ -2,5 +2,7 @@
 Angular JS training assets
 
 Clone the repository locally
-'git clone https://github.com/eliasjames/training-angular.git'
+```
+git clone https://github.com/eliasjames/training-angular.git
+```
 
