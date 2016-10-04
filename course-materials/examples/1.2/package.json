@@ -1,0 +1,19 @@
+{
+  "name": "angular-training",
+  "version": "1.2.0",
+  "description": "Assets for AngularJS training",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eliasjames/training-angular.git"
+  },
+  "author": "Elias Carlston <elias@eliascarlston.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eliasjames/training-angular/issues"
+  },
+  "homepage": "https://github.com/eliasjames/training-angular#readme"
+}
