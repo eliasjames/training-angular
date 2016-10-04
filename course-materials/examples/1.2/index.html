@@ -7,10 +7,17 @@
   <meta name="author" content="Elias Carlston">
   <script src="node_modules/angular/angular.js"></script>
   <script>
-    angular.module('songsApp', []);
+    angular.module( 'songsApp', [] );
+  </script>
+  <script>
+    var songsApp = angular.module( 'songsApp' );
+    songsApp.directive( 'microphoneCheck', function() {
+      return { template: 'one two one too' };
+    });
   </script>
 </head>
-<body>
+<body ng-app="songsApp">
   <h1>Worked!</h1>
+  <div microphone-check></div>
 </body>
 </html>
