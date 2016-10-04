@@ -8,20 +8,19 @@
   <script src="node_modules/angular/angular.js"></script>
   <script>
     angular.module( 'songsApp', [] );
+    var songsApp = angular.module( 'songsApp' );
   </script>
   <script>
-    var songsApp = angular.module( 'songsApp' );
     songsApp.directive( 'songsMicrophoneCheck', function() {
-      return {
+      return {  
         restrict: 'E',
-        template: 'one two one too'
+        template: 'one two one too' 
       };
     });
   </script>
 </head>
 <body ng-app="songsApp">
   <h1>Worked!</h1>
-  <div songs-microphone-check></div>
   <songs-microphone-check></songs-microphone-check>
 </body>
 </html>
