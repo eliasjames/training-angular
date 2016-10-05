@@ -5,11 +5,11 @@
   <span ng-bind="songsBgColor"> one two one too </span>
 </div>
 <div>
-  <label for="songsList">Songs list</label>
+  <label for="songsList">Comma delimited list of numbers</label>
   <input name="songsList" ng-list ng-model="songsList"></input>
   <ul> 
-    <li ng-repeat="song in songsList">
-      {{ song }}
+    <li ng-repeat="song in songsList track by $index">
+      {{ song }}: {{ song * $index }}
     </li>
   </ul>
 </div>
