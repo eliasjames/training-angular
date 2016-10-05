@@ -4,3 +4,12 @@
   <input name="songsBgColorInput" ng-model="songsBgColor"></input>
   <span ng-bind="songsBgColor"> one two one too </span>
 </div>
+<div>
+  <label for="songsList">Songs list</label>
+  <input name="songsList" ng-list ng-model="songsList"></input>
+  <ul> 
+    <li ng-repeat="song in songsList">
+      {{ song }}
+    </li>
+  </ul>
+</div>
