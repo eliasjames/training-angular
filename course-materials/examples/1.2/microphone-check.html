@@ -8,8 +8,9 @@
   <label for="songsList">Comma delimited list of numbers</label>
   <input name="songsList" ng-list ng-model="songsList"></input>
   <ul> 
-    <li ng-repeat="song in songsList track by $index">
-      {{ song }}: {{ song * $index }}
+    <li ng-repeat="song in songsList track by $index"
+      ng-init="product = ( song * $index )">
+      {{ song }}: {{ product }}
     </li>
   </ul>
 </div>
