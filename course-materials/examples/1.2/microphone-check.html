@@ -1,1 +1,5 @@
-<div>one two one too</div>
+<div style="background-color: {{ songsBgColorTrigger }}">
+  <h2>Directives example: {{ songsBgColorTrigger }}</h2>
+  <input ng-blur="songsBgColorTrigger = 'lightblue'"></input>
+  <span ng-bind="songsBgColorTrigger"> one two one too </span>
+</div>
