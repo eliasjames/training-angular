@@ -1,4 +1,14 @@
 <h2>Songs Template</h2>
-<ul>
-  <li ng-repeat="song in songsList.songs">{{ song.title }}</li>
-</ul>
+<table>
+  <tr ng-repeat="song in songsList.songs">
+    <td>
+      {{ song.artist }}
+    </td>
+    <td>
+      {{ song.title }}
+    </td>
+    <td>
+      {{ song.genre }}
+    </td>
+  </tr>
+</table>
