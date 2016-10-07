@@ -10,17 +10,13 @@
     angular.module( 'songsApp', [] );
     var songsApp = angular.module( 'songsApp' );
   </script>
-  <script>
-    songsApp.directive( 'songsMicrophoneCheck', function() {
-      return {  
-        restrict: 'E',
-        templateUrl: 'microphone-check.html'
-      };
-    });
-  </script>
+  <script src="songsController.js"></script>
+  <script src="songsDirective.js"></script>
 </head>
 <body ng-app="songsApp">
   <h1>Angular 1.2 Training</h1>
-  <songs-microphone-check></songs-microphone-check>
+  <div ng-controller="songsController">
+    <songs-directive></songs-directive>
+  </div>
 </body>
 </html>
