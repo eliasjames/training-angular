@@ -34,7 +34,11 @@
   </tr>
   <tr>
     <td>
-      <button ng-click="songsList.songs.push( { editMode: true } )">Add song</button>
+      <button  ng-show="!songsList.newSong" ng-click="songsList.startNewSong();">New song</button>
+      <form ng-show="songsList.newSong">
+        <input ng-model="songsList.newSong.title"></input>
+        <button ng-click="songsList.finishNewSong();">Finish song</button>
+      </form>
     </td>
   </tr>
 </table>
