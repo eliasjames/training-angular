@@ -6,7 +6,7 @@
       {{ songsListKey }}
     </th>
   </tr>
-  <tr ng-repeat="song in songsList.songs">
+  <tr ng-repeat="song in songsList.songs track by $index">
     <td>
       <span ng-show="!song.editMode">
         {{ song.artist }}
