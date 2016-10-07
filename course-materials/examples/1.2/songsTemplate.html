@@ -1,5 +1,10 @@
 <h2>Songs Template</h2>
 <table>
+  <tr>
+    <th ng-repeat="(songsListKey, songsListValue ) in songsList.songs[0]">
+      {{ songsListKey }}
+    </th>
+  </tr>
   <tr ng-repeat="song in songsList.songs">
     <td>
       <span ng-show="!song.editMode">
