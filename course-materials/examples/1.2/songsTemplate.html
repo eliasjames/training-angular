@@ -5,16 +5,19 @@
       <span ng-show="!song.editMode">
         {{ song.artist }}
       </span>
+      <input ng-show="song.editMode" ng-model="song.artist"></input>
     </td>
     <td>
       <span ng-show="!song.editMode">
         {{ song.title }}
       </span>
+      <input ng-show="song.editMode" ng-model="song.title"></input>
     </td>
     <td>
       <span ng-show="!song.editMode">
         {{ song.genre }}
       </span>
+      <input ng-show="song.editMode" ng-model="song.genre"></input>
     </td>
     <td>
       <button ng-click="song.editMode = !song.editMode">
