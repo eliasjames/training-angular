@@ -2,13 +2,25 @@
 <table>
   <tr ng-repeat="song in songsList.songs">
     <td>
-      {{ song.artist }}
+      <span ng-show="!song.editMode">
+        {{ song.artist }}
+      </span>
     </td>
     <td>
-      {{ song.title }}
+      <span ng-show="!song.editMode">
+        {{ song.title }}
+      </span>
     </td>
     <td>
-      {{ song.genre }}
+      <span ng-show="!song.editMode">
+        {{ song.genre }}
+      </span>
+    </td>
+    <td>
+      <button ng-click="song.editMode = !song.editMode">
+        <span ng-show="!song.editMode">Edit</span>
+        <span ng-show="song.editMode">Done</span>
+      </button>
     </td>
   </tr>
 </table>
