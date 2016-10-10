@@ -1,4 +1,4 @@
-songsApp.controller( 'songsController', [ '$scope', '$http', 'abbreviationFilterFilter', function songsControllerInit( $scope, $http, abbrvFilter ) {
+songsApp.controller( 'songsController', [ '$sce', '$scope', '$http', 'abbreviationFilterFilter', function songsControllerInit( $sce, $scope, $http, abbrvFilter ) {
   this.songs = [];
   var that = this;
 
@@ -12,8 +12,12 @@ songsApp.controller( 'songsController', [ '$scope', '$http', 'abbreviationFilter
   this.startNewSong = function startNewSong() {
     this.newSong = {};
   };
-  this.finishNewSong = function finishNewSong() {
-    this.songs.push( this.newSong );
+  this.finishNewSong = function finishNewSong( isValid ) {
+    this.songs.push( {
+      artist: $sce.trustAsHtml( this.newSong.artist ),
+      title: $sce.trustAsHtml( this.newSong.title ),
+      genre: this.newSong.genre
+    });
     delete this.newSong;
   }
 }]);
