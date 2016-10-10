@@ -8,14 +8,12 @@
   </tr>
   <tr ng-repeat="song in songsList.songs track by $index">
     <td>
-      <span ng-show="!song.editMode">
-        {{ song.artist }}
+      <span ng-show="!song.editMode" ng-bind-html="song.artist | abbreviationFilter:5">
       </span>
       <input ng-show="song.editMode" ng-model="song.artist"></input>
     </td>
     <td>
-      <span ng-show="!song.editMode">
-        {{ song.title }}
+      <span ng-show="!song.editMode" ng-bind-html="song.title">
       </span>
       <input ng-show="song.editMode" ng-model="song.title"></input>
     </td>
