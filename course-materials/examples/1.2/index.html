@@ -6,17 +6,17 @@
   <meta name="description" content="Angular 1.2 Training">
   <meta name="author" content="Elias Carlston">
   <script src="node_modules/angular/angular.js"></script>
-  <script>
-    angular.module( 'songsApp', [] );
-    var songsApp = angular.module( 'songsApp' );
-  </script>
+  <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="songsApp.js"> </script>
   <script src="songsController.js"></script>
   <script src="songsDirective.js"></script>
 </head>
 <body ng-app="songsApp">
   <h1>Angular 1.2 Training</h1>
   <div ng-controller="songsController as songsList">
-    <songs-directive></songs-directive>
+    <a ui-sref="about">About</a>
+    <a ui-sref="songs">Songs</a>
+    <ui-view></ui-view>
   </div>
 </body>
 </html>

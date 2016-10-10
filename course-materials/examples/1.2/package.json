@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/eliasjames/training-angular/issues"
   },
-  "homepage": "https://github.com/eliasjames/training-angular#readme"
+  "homepage": "https://github.com/eliasjames/training-angular#readme",
+  "dependencies": {
+    "angular-ui-router": "^0.3.1"
+  }
 }
