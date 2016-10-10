@@ -30,13 +30,11 @@
       </button>
     </td>
   </tr>
-  <tr>
-    <td>
-      <button  ng-show="!songsList.newSong" ng-click="songsList.startNewSong();">New song</button>
-      <form ng-show="songsList.newSong">
-        <input ng-model="songsList.newSong.title"></input>
-        <button ng-click="songsList.finishNewSong();">Finish song</button>
-      </form>
-    </td>
-  </tr>
 </table>
+<button  ng-if="!songsList.newSong" ng-click="songsList.startNewSong();">New song</button>
+<form name="newSongForm" ng-if="songsList.newSong">
+  <input name="artist" ng-model="songsList.newSong.artist" ng-minlength=2 required></input>
+  <input name="title" ng-model="songsList.newSong.title" ng-minlength=2 required></input>
+  <span>form valid: {{ newSongForm.$valid }}</span>
+  <button ng-click="songsList.finishNewSong();" ng-disabled="!newSongForm.$valid">Finish song</button>
+</form>
