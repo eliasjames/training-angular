@@ -1,11 +1,12 @@
-<ul>
+<ul class="performance-component">
   <li>
     <artist></artist>
   </li>
   <li>
-    <song></song>
+    <song [song]="mySong"></song>
   </li>
   <li>
     <h3>Genre</h3>
+    <div>{{ myPerformance.genreName }}</div>
   </li>
 </ul>

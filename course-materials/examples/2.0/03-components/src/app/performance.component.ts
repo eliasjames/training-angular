@@ -15,4 +15,5 @@ var anotherPerformance = new Performance( anotherArtist, mySong, 'Dance' );
 })
 export class PerformanceComponent {
   myPerformance = myPerformance;
+  mySong = mySong;
 }
