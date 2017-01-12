@@ -1,0 +1,14 @@
+<ul class="performance-component">
+  <li>
+    <artist [artist]="myArtist"></artist>
+  </li>
+  <li>
+    <song [song]="mySong"></song>
+    <!-- note changes to passed-in object are also seen at this level -->
+    <div>{{ mySong.songName }}</div>
+  </li>
+  <li>
+    <h3>Genre</h3>
+    <div>{{ myPerformance.genreName }}</div>
+  </li>
+</ul>
