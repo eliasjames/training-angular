@@ -1,0 +1,8 @@
+ul.performance-component {
+  clear: both;
+}
+ul.performance-component li {
+  float: left;
+  list-style-type: none;
+  width: 33%;
+}

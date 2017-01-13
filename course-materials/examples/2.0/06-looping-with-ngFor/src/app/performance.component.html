@@ -1,0 +1,14 @@
+<ul class="performance-component" 
+  *ngFor="let performance of performances"
+  >
+  <li>
+    <artist [artist]="performance.artist"></artist>
+  </li>
+  <li>
+    <song [song]="performance.song"></song>
+  </li>
+  <li>
+    <h3>Genre</h3>
+    <div>{{ performance.genreName }}</div>
+  </li>
+</ul>
