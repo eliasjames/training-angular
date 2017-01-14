@@ -16,4 +16,13 @@ var performanceArray = [ myPerformance, anotherPerformance ];
 })
 export class PerformanceComponent {
   performances = performanceArray;
+  newPerformance() {
+    performanceArray.push(
+      new Performance(
+        new Artist(),
+        new Song(),
+        'Empty genre'
+      )
+    );
+  }
 }

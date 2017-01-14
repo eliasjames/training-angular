@@ -1,6 +1,12 @@
+ul.multi-performances {
+  clear: both;
+}
 ul.multi-performances > li {
   clear: both;
   list-style-type: none;
+}
+ul.performance-component {
+  margin-left: 0;
 }
 ul.performance-component li {
   float: left;
