@@ -21,7 +21,8 @@ export class PerformanceComponent {
       new Performance(
         new Artist(),
         new Song(),
-        'Empty genre'
+        'Empty genre',
+        true
       )
     );
   }

@@ -7,10 +7,10 @@ export class Performance {
   genreName: string;
   editMode: Boolean;
 
-  constructor( artist: Artist, song: Song, genreName: string ) {
+  constructor( artist: Artist, song: Song, genreName: string, editMode?: boolean ) {
     this.song = song;
     this.artist = artist;
     this.genreName = genreName;
-    this.editMode = false;
+    this.editMode = editMode || false;
   }
 }
