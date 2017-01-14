@@ -1,0 +1,5 @@
+<h3 *ngIf="displayHeaders">Artist</h3>
+<ng-container [ngSwitch]="editMode === true">
+  <input *ngSwitchCase="true" [(ngModel)]="artist.artistName"> 
+  <span *ngSwitchCase="false" [innerHTML]="artist.artistName"></span>
+</ng-container>
