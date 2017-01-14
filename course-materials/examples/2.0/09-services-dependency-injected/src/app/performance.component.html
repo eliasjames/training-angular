@@ -1,0 +1,54 @@
+<ul class="multi-performances">
+  <li>
+    <ul>
+      <li>
+        <h3>Artist</h3>
+      </li>
+      <li>
+        <h3>Song</h3>
+      </li>
+      <li>
+        <h3>Genre</h3>
+      </li>
+      <li>
+        <h3>Controls</h3>
+      </li>
+    </ul>
+  </li>
+  <li *ngFor="let performance of performances">
+    <ul class="performance-component" >
+      <li>
+        <artist [artist]="performance.artist" [editMode]="performance.editMode"></artist>
+      </li>
+      <li>
+        <song [song]="performance.song" [editMode]="performance.editMode"></song>
+      </li>
+      <li>
+        <div>{{ performance.genreName }}</div>
+      </li>
+      <li>
+        <button 
+          (click)="toggleEditMode( performance )"
+          [disabled]="componentEditMode === true && performance.editMode === false"
+        >
+          <ng-container [ngSwitch]="performance.editMode === true">
+            <ng-container *ngSwitchCase="true">
+              Done
+            </ng-container>
+            <ng-container *ngSwitchCase="false">
+              Edit
+            </ng-container>
+          </ng-container>
+        </button>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <button 
+      (click)="newPerformance()"
+      [disabled]="componentEditMode === true"
+    >
+      Add one
+    </button>
+  </li>
+</ul>
