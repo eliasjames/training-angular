@@ -1,0 +1,5 @@
+<h3 *ngIf="displayHeaders">Song</h3>
+<ng-container [ngSwitch]="editMode === true">
+  <input *ngSwitchCase="true" [(ngModel)]="song.songName"> 
+  <span *ngSwitchCase="false" [innerHTML]="song.songName"></span>
+</ng-container>
