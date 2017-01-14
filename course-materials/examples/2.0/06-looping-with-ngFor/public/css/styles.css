@@ -1,5 +1,6 @@
-ul.performance-component {
+ul.multi-performances > li {
   clear: both;
+  list-style-type: none;
 }
 ul.performance-component li {
   float: left;
