@@ -1,17 +1,19 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Song } from './song.class';
+import { SongService } from './song.service';
 
 @Component({
   selector: 'song',
+  providers: [ SongService ],
   templateUrl: './song.component.html'
 })
-export class SongComponent implements OnInit {
+export class SongComponent {
 	@Input() song: Song;
   @Input() editMode: Boolean;
+  songList: Song[];
 
-	ngOnInit() {
-    if ( !this.song ) {
-      this.song = new Song();
-    }
+	constructor( songService: SongService ) {
+    this.songList = songService.getSongs();
+    console.log( this.songList );
 	}
 }
