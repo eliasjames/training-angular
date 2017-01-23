@@ -1,0 +1,8 @@
+<h3 *ngIf="displayHeaders">Artist</h3>
+<ng-container [ngSwitch]="editMode === true">
+  <input *ngSwitchCase="true" [(ngModel)]="artist.artistName"> 
+  <div *ngSwitchCase="false">{{ artist.artistName }}</div>
+  <div *ngSwitchCase="false">
+    Birthdate: {{ artist.birthdate | date: "MM/dd/yyyy" | artistBirthdate }}
+  </div>
+</ng-container>

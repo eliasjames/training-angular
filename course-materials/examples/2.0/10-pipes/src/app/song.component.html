@@ -1,0 +1,9 @@
+<h3 *ngIf="displayHeaders">Song</h3>
+<ng-container [ngSwitch]="editMode === true">
+  <select *ngSwitchCase="true" [(ngModel)]="song"> 
+    <option *ngFor="let eachSong of songList" [ngValue]="eachSong">
+      {{ eachSong.songName }}
+    </option>
+  </select>
+  <span *ngSwitchCase="false" [innerHTML]="song.songName"></span>
+</ng-container>
