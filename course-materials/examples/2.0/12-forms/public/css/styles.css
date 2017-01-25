@@ -1,0 +1,17 @@
+ul.multi-performances {
+  clear: both;
+}
+ul.multi-performances > li {
+  clear: both;
+  height: 2em;
+  list-style-type: none;
+  margin-bottom: 0.5em;
+}
+ul.multi-performances ul li {
+  float: left;
+  list-style-type: none;
+  width: 25%;
+}
+ul.performance-component {
+  margin-left: 0;
+}
