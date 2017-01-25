@@ -10,7 +10,10 @@ import { ArtistBirthdayPipe } from './artist.birthday.pipe';
 import { SongComponent } from './song.component';
 
 const appRoutes: Routes = [
-  { path: 'performances/:id',      component: PerformanceComponent },
+  {
+		path: 'performances/:id',
+		component: PerformanceComponent
+	},
   {
     path: 'about',
     component: AboutComponent,
