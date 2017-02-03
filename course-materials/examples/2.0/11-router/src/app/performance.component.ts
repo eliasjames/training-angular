@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params }   from '@angular/router';
 import { Performance } from './performance.class';
 import { Song } from './song.class';
 import { Artist } from './artist.class';
@@ -14,10 +15,17 @@ var performanceArray = [ myPerformance, anotherPerformance ];
   selector: 'performance',
   templateUrl: './performance.component.html'
 })
-export class PerformanceComponent {
+export class PerformanceComponent implements OnInit {
   performances = performanceArray;
   componentEditMode: Boolean = false;
 
+  constructor( private route: ActivatedRoute ) {}
+
+  ngOnInit() {
+    this.route.params.subscribe( params => {
+      console.log( params );
+    });
+  }
   newPerformance() {
     performanceArray.push(
       new Performance(
