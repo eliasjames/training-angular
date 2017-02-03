@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { HttpService } from './http.service';
+
 
 @Component({
   selector: 'about',
+  providers: [ HttpService ],
   templateUrl: './about.component.html'
 })
 export class AboutComponent {
   title: string;
-  constructor( route: ActivatedRoute ) {
-    this.title = route.snapshot.data['title'];
+  gottenData: string;
+
+  constructor( myService: HttpService ) {
+    myService.getData( 'some/path' ).then( ( resp )=>{
+      this.gottenData = resp.json().data;
+    }).catch( ( err )=>{ console.error( err ) });
   }
 }
