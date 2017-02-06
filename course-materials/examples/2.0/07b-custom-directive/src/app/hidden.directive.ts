@@ -9,10 +9,8 @@ export class HiddenDirective {
     @Input() myHidden: boolean;
 
     ngOnInit(){
-        console.log(this.myHidden)
-        if(this.myHidden) {
-            console.log('hide');
-            this.renderer.setElementStyle(this.el.nativeElement, 'display', 'none');
+        if ( this.myHidden ) {
+					this.renderer.setElementStyle( this.el.nativeElement, 'display', 'none' );
         }
     }
 }
