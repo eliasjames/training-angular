@@ -1,4 +1,3 @@
-// ./app/shared/hidden.directive.ts
 import { Directive, ElementRef, Input, Renderer } from '@angular/core';
 
 @Directive({ selector: '[myHidden]' })
