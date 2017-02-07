@@ -5,7 +5,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class HttpService {
-  baseUrl: string = 'localhost:8000/';
+  baseUrl: string = 'http://localhost:8080/';
 	
   constructor(private http: Http) { 
     this.http = http;

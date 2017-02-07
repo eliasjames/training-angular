@@ -12,8 +12,9 @@ export class AboutComponent {
   gottenData: string;
 
   constructor( myService: HttpService ) {
-    myService.getData( 'some/path' ).then( ( resp )=>{
+    myService.getData( 'public/test.json' ).then( ( resp )=>{
       this.gottenData = resp.json().data;
+      console.log( resp );
     }).catch( ( err )=>{ console.error( err ) });
   }
 }
