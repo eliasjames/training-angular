@@ -1,0 +1,20 @@
+Debugging
+- make sure enableProdMode() not turned on. Console should say "Angular is running in the development mode. Call enableProdMode() to enable the production mode."
+- make sure sourcemaps === true in tsconfig.json
+- install Augury. This is a Chrome extension that allows you to browse Angular components & modules
+- add the 'debugger' keyword to source code to force a breakpoint
+- use the 'json' pipe to observe model details in real time
+- consider using angular2-logger (npm package)
+
+Building for prod
+- remember, it's 'npm run build'. 'npm build' is an internal npm command that will not do what you want. 
+
+ng cli
+- buggy
+- super buggy
+- still in beta
+- 'ng help' doesn't work 
+- https://github.com/angular/angular-cli/issues/4338
+- 'npm install -g @angular/cli'
+- permissions error? 'sudo chown -R $USER /usr/local'
+- try 'ng help'
