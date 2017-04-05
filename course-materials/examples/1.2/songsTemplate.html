@@ -8,7 +8,7 @@
   </tr>
   <tr ng-repeat="song in songsList.songs track by $index">
     <td>
-      <span ng-show="!song.editMode" ng-bind-html="song.artist | abbreviationFilter:5">
+      <span ng-show="!song.editMode"> {{ song.artist | uppercase }}
       </span>
       <input ng-show="song.editMode" ng-model="song.artist"></input>
     </td>
@@ -33,7 +33,7 @@
 </table>
 <button  ng-if="!songsList.newSong" ng-click="songsList.startNewSong();">New song</button>
 <form name="newSongForm" ng-if="songsList.newSong">
-  <input name="artist" ng-model="songsList.newSong.artist" ng-minlength=2 required></input>
+  <input name="artist" ng-model="songsList.newSong.artist" ng-minlength=2 ng-pattern="/^[^<]*$/" required></input>
   <input name="title" ng-model="songsList.newSong.title" ng-minlength=2 required></input>
   <span>form valid: {{ newSongForm.$valid }}</span>
   <button ng-click="songsList.finishNewSong();" ng-disabled="!newSongForm.$valid">Finish song</button>
