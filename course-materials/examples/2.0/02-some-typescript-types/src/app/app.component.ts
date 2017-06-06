@@ -1,14 +1,5 @@
 import { Component } from '@angular/core';
 import '../../public/css/styles.css';
-import { Performance } from './performance.class';
-import { Song } from './song.class';
-import { Artist } from './artist.class';
-
-var mySong = new Song( 'Always On My Mind' );
-var myArtist = new Artist( 'Willie Nelson' );
-var myPerformance = new Performance( myArtist, mySong, 'Country' );
-var anotherArtist = new Artist( 'Pet Shop Boys' );
-var anotherPerformance = new Performance( anotherArtist, mySong, 'Dance' );
 
 @Component({
   selector: 'my-app',
@@ -16,5 +7,22 @@ var anotherPerformance = new Performance( anotherArtist, mySong, 'Dance' );
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  myPerformance = myPerformance;
+  //  myPerformance = myPerformance;
 }
+
+//import { Performance } from './performance.class';
+//import { Genre } from './genre.class';
+//import { Song } from './song.class';
+//import { Artist } from './artist.class';
+//import { Album } from './album.class';
+//
+//var mySong = new Song( 'Always On My Mind' );
+//var myArtist = new Artist( 'Willie Nelson' );
+//var countryGenre = new Genre( 'Country' );
+//var myPerformance = new Performance( myArtist, mySong, countryGenre );
+//
+//var anotherArtist = new Artist( 'Pet Shop Boys' );
+//var danceGenre = new Genre( 'Dance' );
+//var anotherPerformance = new Performance( anotherArtist, mySong, danceGenre );
+//
+//var myAlbum = new Album( [ myPerformance, anotherPerformance ] );

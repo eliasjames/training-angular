@@ -1,14 +1,15 @@
 import { Artist } from './artist.class';
 import { Song } from './song.class';
+import { Genre } from './genre.class';
 
 export class Performance {
   song: Song;
   artist: Artist;
-  genreName: string;
+  genre: Genre;
 
-  constructor( artist: Artist, song: Song, genreName: string ) {
+  constructor( artist: Artist, song: Song, genre: Genre ) {
     this.song = song;
     this.artist = artist;
-    this.genreName = genreName;
+    this.genre = genre;
   }
 }
