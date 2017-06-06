@@ -8,9 +8,10 @@
       angular.module('our-app', []);
       angular.module('our-app')
         .controller('SongEditController', function($scope) {
-          $scope.savedSong = { name: '---', genre: '---'};
+          $scope.blankSong = { name: '---', genre: '---'};
+          $scope.songsList = []
           $scope.update = function (song) {
-            $scope.savedSong = angular.copy(song);
+            $scope.songsList.push( angular.copy(song));
           }
         });
     </script>
@@ -20,6 +21,7 @@
     <div ng-controller="SongEditController">
       <form novalidate>
         Name: <input type="text" ng-model="song.name">&nbsp;<span ng-bind="song.name.length"></span><br/>
+        Artist: <input type="text" ng-model="song.artist">&nbsp;<span ng-bind="song.artist.length"></span><br/>
         Genre: <select ng-model="song.genre">
           <option>Blues</option>
           <option>Country</option>
@@ -29,7 +31,7 @@
         <input type="submit" ng-click="update(song)" value="Save" />
         <br/>
       </form>
-      <p>Result: {{ savedSong.name }}, {{ savedSong.genre}}</p>
+      <p>Result: {{ songsList }} </p>
     </div>
   </body>
 </html>

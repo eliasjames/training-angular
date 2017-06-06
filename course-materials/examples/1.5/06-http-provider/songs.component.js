@@ -2,8 +2,10 @@ angular.module('ejApp')
     .component('ejSongsComponent', {
     		controller: [
     			'ejSongsHttpService', 
+          'ejSongsUrl',
     			'$scope', 
-    			function ejSongsComponent (ejSHS, $scope) {
+    			function ejSongsComponent (ejSHS, ejSongsUrl, $scope) {
+            $scope.ejSongsUrl = ejSongsUrl;
 	    			ejSHS.then(function (resp) {
 			            console.log(resp);
 			            $scope.songs = resp.data.songs;
