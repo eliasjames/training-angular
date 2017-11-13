@@ -1,5 +1,10 @@
 <h3>Song</h3>
-<input 
-  [value]="song.songName" 
-  (change)="song.songName = $event.target.value"
->
+<div [ngSwitch]="editMode">
+  <input *ngSwitchCase="true"
+    [value]="song.songName"
+    (change)="changeHandler( $event )"
+  >
+  <div *ngSwitchCase="false"
+    ngBind="song.songName"
+  ></div>
+</div>

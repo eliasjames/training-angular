@@ -3,12 +3,15 @@
     <artist [artist]="myArtist"></artist>
   </li>
   <li>
-    <song [song]="mySong"></song>
+    <song [song]="mySong" [editMode]="editMode"></song>
     <!-- note changes to passed-in object are also seen at this level -->
     <div>{{ mySong.songName }}</div>
   </li>
   <li>
     <h3>Genre</h3>
     <div>{{ myPerformance.genreName }}</div>
+  </li>
+  <li>
+    <button (click)="editMode = !editMode">Edit</button>
   </li>
 </ul>

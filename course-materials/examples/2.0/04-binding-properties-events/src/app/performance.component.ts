@@ -17,4 +17,5 @@ export class PerformanceComponent {
   myPerformance = myPerformance;
   mySong = mySong;
   myArtist = myArtist;
+  editMode: Boolean;
 }
